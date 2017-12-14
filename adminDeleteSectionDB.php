@@ -6,6 +6,9 @@ $crn = $_POST["section"];
 $sql = "DELETE FROM section WHERE CRN='".$crn."'";
 $conn->query($sql);
 
+$sql2 = "DELETE FROM enrolled WHERE CRN='".$crn."'";
+$conn->query($sql2);
+
 ?>
 
 <!DOCTYPE html>
