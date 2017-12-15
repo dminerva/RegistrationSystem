@@ -23,6 +23,13 @@
 		</div>
 		<div class="col-sm-4">
 			<button type="button" class="btn btn-default btn-block" >
+				<a href="researchByDept.php">Department statistics</a>
+			</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<button type="button" class="btn btn-default btn-block" >
 				<a href="researchByUser.php">User statistics</a>
 			</button>
 		</div>

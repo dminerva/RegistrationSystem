@@ -68,9 +68,20 @@ function getUserData(val) {
     $.ajax({
         type: "POST",
         url: "get_UserData.php",
-        data:'user_type='+val,
+        data:'user_data='+val,
         success: function(data){
             $("#user_data").html(data);
+        }
+	}); 
+}
+
+function getDeptData(val) {
+    $.ajax({
+        type: "POST",
+        url: "get_DeptData.php",
+        data:'dept_id='+val,
+        success: function(data){
+            $("#dept_data").html(data);
         }
 	}); 
 }
