@@ -101,6 +101,54 @@
             </div>
         </div>
     </form>
+    <hr>
+    <h2>Create a day combination</h2>
+    <form action="adminCreateSemDB.php" method="post">
+        <div class="row">
+            <div class="form-group">
+                <div class="col-sm-4">
+                    <label for="sem">Semester:</label>
+                    <select class="form-control" name="sem" id="sem" required>
+                        <option value=""></option>
+                        <option value="Winter">Winter</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Fall">Fall</option>
+                    </select>
+                </div>
+                <div class="col-sm-4">
+                    <label for="year">Year:</label>
+                    <select class="form-control" name="year" id="year" required>
+                        <option value=""></option> 
+                        <?php 
+                        include 'connectDB.php';
+
+                        $year = 0;
+
+                        $sql = "SELECT * FROM semesteryear";
+
+                        $result = $conn->query($sql);
+                        
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                if($row["Year"] > $year) {
+                                    $year = $row["Year"];
+                                }
+                            }
+                        }
+
+                        for($i = $year; $i < $year + 10; $i++) {
+                            echo "<option value='".$i."'>".$i."</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 </body>
 </html>

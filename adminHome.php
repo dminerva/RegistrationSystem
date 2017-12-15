@@ -56,7 +56,7 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-4">
-			<a href="adminCreateTimeSlot.php">Create timeslot/day combination</a>
+			<a href="adminCreateTimeSlot.php">Create timeslot/day combination/semester</a>
 		</div>
 		<div class="col-sm-4">
 			<a href="adminStuAddSection.php">Register student</a>
