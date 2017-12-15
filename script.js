@@ -63,3 +63,14 @@ function getMajorData(val) {
         }
 	});    
 }
+
+function getUserData(val) {
+    $.ajax({
+        type: "POST",
+        url: "get_UserData.php",
+        data:'user_type='+val,
+        success: function(data){
+            $("#user_data").html(data);
+        }
+	}); 
+}

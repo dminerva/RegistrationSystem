@@ -38,7 +38,7 @@
                 <?php
                 include 'connectDB.php';
 
-                $sql = "SELECT * FROM semesteryear";
+                $sql = "SELECT * FROM semesteryear WHERE (current=1 OR current=2)";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {

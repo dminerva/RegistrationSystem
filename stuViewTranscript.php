@@ -50,11 +50,13 @@
 		</tbody>
 	</table>
 	<?php			
+	if($count > 0) {
 		$avg = $total / $count;
 		$gpa = ($avg / 100) * 4;
 		//echo $total." - ".$count." - ".$avg." - ".$gpa;
 
 		echo "<p>Total Credits: ".$credit." GPA: ".$gpa."</p>";
+	}
 	?>
 </div>
 </body>

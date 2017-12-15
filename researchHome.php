@@ -21,6 +21,11 @@
 				<a href="researchByMajor.php">Major statistics</a>
 			</button>
 		</div>
+		<div class="col-sm-4">
+			<button type="button" class="btn btn-default btn-block" >
+				<a href="researchByUser.php">User statistics</a>
+			</button>
+		</div>
 	</div>
 </div>
 </body>
