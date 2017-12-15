@@ -5,6 +5,7 @@ if(!empty($_POST["user_data"])) {
     if($_POST["user_data"] == "student") {
         $full = 0;
         $part = 0;
+        $total = 0;
 
         $count = 0;
         
@@ -23,7 +24,10 @@ if(!empty($_POST["user_data"])) {
             }
         }
 
-        echo "fulltime: ".$full." - parttime: ".$part;
+        echo "<p>amount of fulltime students: ".$full."</p>";
+        echo "<p>amount of parttime students: ".$part."</p>";
+        $total = $full + $part;
+        echo "<p>total students: ".$total."</p>";
     } else {
         $count = 0;
         
@@ -39,7 +43,7 @@ if(!empty($_POST["user_data"])) {
             }
         }
 
-        echo "amount of ".$type.": ".$count;
+        echo "<p>amount of ".$type.": ".$count."</p>";
     }
 
 }
