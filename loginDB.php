@@ -4,10 +4,12 @@ include 'connectDB.php';
 
 $email = $_POST["email"];
 $password = $_POST["password"];
-//$password = md5($password);
+$password = md5($password);
 
 $email = filter_var($email, FILTER_SANITIZE_STRING);
 $password = filter_var($password, FILTER_SANITIZE_STRING);
+
+
 
 $sql = "SELECT * FROM user WHERE UserEmail = '$email' AND Password = '$password'";
 $result = $conn->query($sql);
