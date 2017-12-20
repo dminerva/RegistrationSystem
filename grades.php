@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,10 +23,10 @@
 			$CRN = $_SESSION["CRN"];
 
 
-			$sql = "SELECT * FROM Enrolled AS en
+			$sql = "SELECT * FROM enrolled AS en
 			LEFT JOIN section as sec ON sec.CRN = en.CRN 
 			LEFT JOIN student AS stu ON stu.userEmail = en.userEmail
-			LEFT JOIN SemesterYear as sy ON sy.SemesterYearID = sec.SemesterYear
+			LEFT JOIN semesteryear as sy ON sy.SemesterYearID = sec.SemesterYear
 			WHERE en.CRN ='".$CRN."'";
 
 
@@ -58,16 +61,17 @@
 				<option value="D">D</option>
 				<option value="D-">D-</option>
 				<option value="F">F</option>
+                                <option value="I">I</option>
+                                <option value="W">W</option>
 				</select><br>
 				
 
 			</select>
 		</div>
+<?php 
+$cid = $_POST["cname"];
 
-		<?php 
-		$cid = $_POST["cname"];
-		echo $cid;
-		?>
+?>
 
 		 <input type="hidden" id ="cid" name="cid" value = <?php echo $cid?>/>
 		<div class="form-group">

@@ -32,6 +32,21 @@ if ($result->num_rows > 0) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+  body{ 
+           background-image: url("background.jpg");
+           background-size: cover;
+           
+           
+           
+  }
+  .row{
+          border-radius: 25px;
+          background: white;
+          opacity:0.9;
+          padding: 25px;
+  }
+  </style>
 </head>
 <body>
 <?php 
@@ -56,43 +71,23 @@ if($today > $date) {
 	<div class="row">
 		<div class="col-sm-3">
 			<h2>View Courses</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<button type="button" class="btn btn-default btn-block" ><a href="https://www.oldwestbury.edu/academics/registrar/catalogs">View Courses</a></button>
+			<p>Sunshine College is proud of its reputation for producing fine young men and women, well prepared with the breadth of outlook and the essential learning skills they will need to become successful citizens in a rapidly changing global community.</p>
+			<button type="button" class="btn btn-default btn-block" onclick="location.href='https://www.oldwestbury.edu/academics/registrar/catalogs';">View Courses</button>
 		</div>
 		<div class="col-sm-3">
   			<h2>Search Courses</h2>
-  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  			<button type="button" class="btn btn-default btn-block" ><a href="searchCourses.php">Search Courses</a></button>
+  			<p> Our programs encourage the highest standard of achievement in every activity undertaken by our students. They focus on whole student development by embracing not only academic, sporting and artistic excellence, but also the building of self esteem, personal confidence, optimism for the future, and a strong sense of community responsibility. </p>
+  			<button type="button" class="btn btn-default btn-block" onclick="location.href='searchCourses.php';" >Search Courses</button>
   		</div>
   		<div class="col-sm-3">
   			<h2>View Sections</h2>
-  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  			<button type="button" class="btn btn-default btn-block"><a href="viewSections.php">View Sections</a></button>
+  			<p>The friendly and supportive atmosphere at each campus is underpinned by a strong code of conduct, the wearing of school uniform, firm structures and clear expectations. In this positive environment students develop strong and constructive relationships with one another and with their teachers, as well as a sense of belonging to and being proud of their school. </p>
+  			<button type="button" class="btn btn-default btn-block" onclick="location.href='viewSections.php';">View Sections</button>
   		</div>
 		<div class="col-sm-3">
 			<h2>Search Sections</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<button type="button" class="btn btn-default btn-block"><a href="searchSections.php">Search Sections</a></button>
+			<p>At Sunshine College both our teaching and support staff are totally committed to assisting every student to reach their potential and become well educated, responsible young adults, fully prepared for the world beyond school where they will undertake university and other tertiary studies, further training, and employment. </p>
+			<button type="button" class="btn btn-default btn-block" onclick="location.href='searchSections.php';">Search Sections</button>
 		</div>
 	</div>
 </div>

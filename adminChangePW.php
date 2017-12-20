@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +41,7 @@
             <input class="form-control" type="password" name="pw2" id="pw2" placeholder="Confirm new password" required>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default" onclick="return confirm('Are you sure you want to modify?');">Submit</button>
         </div>
     </form>
 </div>  

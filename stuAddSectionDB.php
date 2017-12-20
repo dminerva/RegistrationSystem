@@ -130,7 +130,7 @@ if(isset($day) && isset($time)) {
     LEFT JOIN semesteryear AS sy ON s.SemesterYear = sy.SemesterYearID
     LEFT JOIN timeslot AS ts ON ts.TimeSlotID=s.TimeSlot
     LEFT JOIN day AS d ON d.day_id=s.Day
-    WHERE e.UserEmail='".$user."' AND sy.Year='".$year."' AND sy.Semester='".$semester."'";
+    WHERE e.UserEmail='".$user."' AND sy.Year='".$year."' AND sy.Semester='".$semester."' AND s.Day='".$day."'";
 
     $result5 = $conn->query($sql5);
 
@@ -145,7 +145,7 @@ if(isset($day) && isset($time)) {
                 if( ($propFDay != $schedFDay) || ($propFDay != $schedLDay) || ($propLDay != $schedLDay) || ($propLDay != $schedFDay) ) {
                     $error = 1;
                     $msg .= "already scheduled during this time"; 
-                }               
+                } 
             }        
         }
     }
@@ -174,16 +174,11 @@ if(!empty($pre)) {
         $sql7 = "SELECT * FROM academicrecord AS a
                 LEFT JOIN section AS s ON a.CourseID = s.CourseID
                 WHERE a.UserEmail='".$user."' AND a.CourseID='".$pre[$i]."'";
-
-        /*for ($i = 0; $i < count($pre); $i++) {
-            echo $pre[$i];
-        }*/
     
         $result7 = $conn->query($sql7);
     
         if ($result7->num_rows > 0) {
             $check = 1;
-            //echo "check set";
         }
 
         if($check == 0) {
@@ -227,7 +222,7 @@ if(isset($seatLim)) {
 if(isset($courseID)) {
     $sql10 = "SELECT * FROM enrolled AS e
     LEFT JOIN section AS s on e.CRN = s.CRN
-    WHERE e.UserEmail='".$user."' AND ( s.CourseID='".$courseID."' OR s.CRN='".$crn."' )";
+    WHERE e.UserEmail='".$user."' AND ( s.CourseID='".$courseID."' OR s.CRN='".$crn."' ) ";
 
     $result10 = $conn->query($sql10);
 

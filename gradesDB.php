@@ -13,10 +13,10 @@
 
 		$stmt = $conn->prepare("INSERT INTO academicrecord (UserEmail,CourseID,Grade,SemesterYear) VALUES (?, ?, ?, ?)");
 		$stmt->bind_param("sisi",$email,$cid,$grades,$sy);
-		$stmt->execute();
+		//$stmt->execute();
  
- 	if($stmt === true) 
- 	{
+         if($stmt->execute() === true) 
+         {
  		echo "Grades successfully added ";
         // user exists
     } 

@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@
                     <label for="startH">Start hour:</label>
                     <select class="form-control" name="startH" id="startH" required>
                         <?php
-                        for($i = 1; $i < 25; $i++) {
+                        for($i = 0; $i < 24; $i++) {
                             echo "<option value='".$i."'>".$row["Semester"]." ".$i."</option>";
                         }
                         ?>
@@ -42,7 +43,7 @@
                     <label for="endH">End hour:</label>
                     <select class="form-control" name="endH" id="endH" required>
                         <?php
-                        for($i = 1; $i < 25; $i++) {
+                        for($i = 0; $i < 24; $i++) {
                             echo "<option value='".$i."'>".$row["Semester"]." ".$i."</option>";
                         }
                         ?>
@@ -102,7 +103,7 @@
         </div>
     </form>
     <hr>
-    <h2>Create a day combination</h2>
+    <h2>Create a Semester combination</h2>
     <form action="adminCreateSemDB.php" method="post">
         <div class="row">
             <div class="form-group">

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'connectDB.php';
 
 $error = 0;
@@ -56,7 +57,7 @@ if($error == 0) {
 if($error == 1) {
     echo "<p>".$msg."</p>";
 } else {
-    echo "<h2>Time slot added</h2>";
+    echo "<h2>Day combination added</h2>";
 }
 ?>
 </div>

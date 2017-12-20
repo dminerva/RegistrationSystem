@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'connectDB.php';
 
 $good = 0; 
@@ -64,6 +65,7 @@ if($good == 1) {
     echo "<h2>Course already exists</h2>";
 }
 ?>
+<a href="adminAddCourse.php">Back</a>
 </div>    
 </body>
 </html>

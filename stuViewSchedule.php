@@ -1,3 +1,4 @@
+<?php ob_start() ?>
 <html>
 <head>
 <title>view schedule</title>

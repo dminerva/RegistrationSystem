@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <html lang="en">
 <head>
 <title>Search Courses</title>

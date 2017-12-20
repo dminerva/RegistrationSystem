@@ -1,3 +1,6 @@
+<?php 
+ob_start(); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,36 +17,43 @@
 <div class="container">		
 	<div class="row">
 		<div class="col-sm-4">
-			<button type="button" class="btn btn-default btn-block" >
+			
 				<a href="profViewCourses.php">View Courses</a>
-			</button>
+
 		</div>
 		<div class="col-sm-4">
-			<button type="button" class="btn btn-default btn-block" >
-				<a href="viewAdvisees.php">View Advisees</a>
-			</button>
+
+				<a href="profViewAdvisees.php">View Advisees</a>
+
 		</div>
 		<div class="col-sm-4">
-			<button type="button" class="btn btn-default btn-block" >
+
 				<a href="viewTranscript.php">View Transcript</a>
-			</button>
+
 		</div>
-		<div class="col-sm-4">
-			<button type="button" class="btn btn-default btn-block" >
+	</div>	
+        <div class="row">
+        		<div class="col-sm-4">
+
 				<a href="assignGrades.php">Assign Grades</a>
-			</button>
+
 		</div>
 		<div class="col-sm-4">
-			<button type="button" class="btn btn-default btn-block" >
+
 				<a href="searchCourses.php">Search Catalog </a>
-			</button>
+
 		</div>
 		<div class="col-sm-4">
-			<button type="button" class="btn btn-default btn-block" >
+
 				<a href="attendance.php">Take Attendance </a>
-			</button>
+
 		</div>
-		
+        </div>
+        <div class="row">
+                <div class="col-sm-4">
+                      <a href="changePassword.php">Change password</a>  
+                </div>
+        </div>
 		
 </div>
 

@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,7 @@
 
 <div class="container">
 <h2>Degree Audit</h2>
+<p><?php echo $_SESSION["fName"]." ".$_SESSION["lName"]; ?></p>
 <?php
 include 'connectDB.php';
 
@@ -80,7 +82,7 @@ $sql = "SELECT * FROM studentmajor AS sm
         LEFT JOIN department AS d ON c.DeptID = d.DeptID
         LEFT JOIN subject AS sub ON sub.subject_id = c.subject_id
         LEFT JOIN enrolled AS e ON s.CRN = e.CRN
-        WHERE ar.CourseID IS NULL AND sm.UserEmail='".$_SESSION["username"]."' AND e.CRN IS NULL";
+        WHERE ar.CourseID IS NULL AND sm.UserEmail='".$_SESSION["username"]."'";
 
 $result = $conn->query($sql);
 
@@ -146,7 +148,7 @@ if ($result->num_rows > 0) {
 <h4>Courses completed</h4>
 <thead>
     <tr>
-        <th>Course</th><th>Course ID</th><th>Credits</th><th>Department</th><th>Subject</th>
+        <th>Course</th><th>Course ID</th><th>Credits</th><th>Department</th><th>Subject</th><th>Grade</th>
     </tr>
 </thead>
 <tbody>
@@ -161,7 +163,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-    echo "<tr><td>".$row["CourseName"]."</td><td>".$row["CourseID"]."</td><td>".$row["Credits"]."</td><td>".$row["dept_name"]."</td><td>".$row["subject_name"]."</td></tr>";
+    echo "<tr><td>".$row["CourseName"]."</td><td>".$row["CourseID"]."</td><td>".$row["Credits"]."</td><td>".$row["dept_name"]."</td><td>".$row["subject_name"]."</td><td>".$row["Grade"]."</td></tr>";
     }
 } else {
     echo "0 results";

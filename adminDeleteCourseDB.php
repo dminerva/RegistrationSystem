@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'connectDB.php';
 
 $courseID = $_POST["courseID"];
@@ -22,7 +23,8 @@ $conn->query($sql);
 <body>
 <?php include 'nav.php' ?>
 <div class="container">
-    <h2>Course Deleted</h2>
+    <h2>Course Deleted</h2> 
+    <a href="adminDeleteCourse.php">Back</a>
 </div>
 </body>
 </html>

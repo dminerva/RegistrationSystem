@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,7 +88,7 @@
             </select>
         </div>
         <div class="form-group">
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default" onclick="return confirm('Are you sure you want to modify?');">Submit</button>
                 <button type="reset" class="btn btn-default" onclick="return confirm('Are you sure you want to reset?');">Reset</button>
         </div>
     </form>

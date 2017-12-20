@@ -1,3 +1,4 @@
+<?php ob_start() ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,22 @@
 <body>
 <?php include 'nav.php';?>
 <div class="container">
+        <h2>Transcript</h2>
+        <?php
+        include 'connectDB.php';
+        
+        $user = $_POST["stu"];
+        
+        $sql2 = "SELECT * FROM user WHERE UserEmail='".$user."'";
+        
+        $result2 = $conn->query($sql2);	
+				
+	if ($result2->num_rows > 0)	{
+		while ($row = $result2->fetch_assoc()) {
+                        echo "<p>".$row["FirstName"]." ".$row["LastName"]."</p>";
+                }
+        }
+        ?>
 	<table class="table">
 		<thead>
 			<tr>
@@ -17,10 +34,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php
-				include 'connectDB.php';
-
-				$user = $_POST["stu"];
+			<?php	
+				
 				$credit = 0;
 				$total = 0;
 				$count = 0;
@@ -52,6 +67,7 @@
 	<?php			
 		$avg = $total / $count;
 		$gpa = ($avg / 100) * 4;
+                $gpa = number_format($gpa, 2, '.', '');
 		//echo $total." - ".$count." - ".$avg." - ".$gpa;
 
 		echo "<p>Total Credits: ".$credit." GPA: ".$gpa."</p>";

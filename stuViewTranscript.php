@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,47 @@
 <body>
 <?php include 'nav.php';?>
 <div class="container">
+        <h2>Transcript</h2>
+        <p><?php echo $_SESSION["fName"]." ".$_SESSION["lName"]; ?></p>
+        <?php
+include 'connectDB.php';
+
+$majorCount = 0;
+$minorCount = 0;
+
+$sql = "SELECT * FROM studentmajor AS sm
+        LEFT JOIN major AS m ON m.MajorID = sm.MajorID
+        WHERE sm.UserEmail='".$_SESSION["username"]."'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $majorCount += 1;
+        if($majorCount == 1) {
+            echo "Major: ".$row["major_name"];
+        } if($majorCount > 1) {
+            echo ", ".$row["major_name"];
+        }
+    }
+}
+
+$sql = "SELECT * FROM studentminor AS sm
+LEFT JOIN minor AS m ON m.MinorID = sm.MinorID
+WHERE sm.UserEmail='".$_SESSION["username"]."'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $majorCount += 1;
+        if($majorCount == 1) {
+            echo "Minor: ".$row["minor_name"];
+        } if($majorCount > 1) {
+            echo ", ".$row["minor_name"];
+        }
+    }
+}
+?>
+        
 	<table class="table">
 		<thead>
 			<tr>
@@ -53,9 +95,11 @@
 	if($count > 0) {
 		$avg = $total / $count;
 		$gpa = ($avg / 100) * 4;
+                $gpa = number_format($gpa,2,".",".");
 		//echo $total." - ".$count." - ".$avg." - ".$gpa;
 
-		echo "<p>Total Credits: ".$credit." GPA: ".$gpa."</p>";
+		echo "<p>Total Credits: ".$credit."</p>";
+                echo "<p>GPA: ".$gpa."</p>";
 	}
 	?>
 </div>

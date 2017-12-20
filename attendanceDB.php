@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <html>
 <head>
 	<title>Attendance </title>
@@ -7,11 +8,7 @@
   	<link rel="stylesheet" type="text/css" href="style.css">	
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  	 <script>
-  	$( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+ 
 
 </head>
 <body>
@@ -30,11 +27,11 @@
 			$user = $_SESSION["username"];
 			$CRN = $_SESSION["CRN"];
 			
-			$sql = "SELECT * FROM Enrolled AS en
+			$sql = "SELECT * FROM enrolled AS en
 			LEFT JOIN section as sec ON sec.CRN = en.CRN 
 			LEFT JOIN student AS stu ON stu.userEmail = en.userEmail
 			LEFT JOIN day as day ON day.day_id = sec.Day
-			LEFT JOIN SemesterYear as sy ON sy.SemesterYearID = sec.SemesterYear
+			LEFT JOIN semesteryear as sy ON sy.SemesterYearID = sec.SemesterYear
 			WHERE en.CRN ='".$CRN."'";
 
 
@@ -66,7 +63,7 @@
 				
 		
 		<div class="form-group">
-			<button type="submit" class="btn btn-default">Search</button>
+			<button type="submit" class="btn btn-default">Submit</button>
 			<button type="reset" class="btn btn-default" onclick="return confirm('Are you sure you want to reset?');">Reset</button>
 		</div>
 	</form>

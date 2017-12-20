@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'connectDB.php';
 
 $good = 0; 
@@ -15,7 +16,7 @@ if ($result->num_rows < 1) {
 
 if ($good == 1) {
     $uemail = $email;
-    $pass = $_POST["pwd"];
+    $pass = md5($_POST["pwd"]);
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
     $major = $_POST["major"]; 
@@ -83,6 +84,7 @@ if($good == 1) {
 } else {
     echo "<h2>Student already exists</h2>";
 }
+echo "<a href='newStudentRegistration.php'>Back</a>";
 ?>
 </div>    
 </body>

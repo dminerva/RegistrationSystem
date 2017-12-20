@@ -1,6 +1,15 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
+      <style> 
+      .container{ 
+              padding: 12px;
+              border: 5px solid black;
+              font-size: 150%;
+      }
+      
+      </style>
 	<title>Admin Home</title>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,10 +21,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-4">
+                <span class="square individual">
 			<a href='newStudentRegistration.php'>Create New Student Account</a>
+                </span>
 		</div>
 		<div class="col-sm-4">
-			<a href=''>Degree Audit</a>
+			<a href='adminDegreeAudit.php'>Degree Audit</a>
 		</div>
 		<div class="col-sm-4">
 			<a href='applyHold.php'>Holds</a>
@@ -63,6 +74,25 @@
 		</div>
 		<div class="col-sm-4">
 			<a href="adminStuDropSection.php">Drop student</a>
+		</div>
+	</div>
+        <div class="row">
+		<div class="col-sm-4">
+			<a href="adminStuTranscript.php">View student transcript</a>
+		</div>
+                <div class="col-sm-4">
+			<a href="adminSetSem.php">Set current semester</a>
+		</div>
+                <div class="col-sm-4">
+			<a href="adminChangePW.php">Change users password</a>
+		</div>
+	</div>
+        <div class="row">
+		<div class="col-sm-4">
+			<a href="adminDeleteStudent.php">Delete Student</a>
+		</div>
+                <div class="col-sm-4">
+			<a href="adminDeleteHold.php">Delete Hold</a>
 		</div>
 	</div>
 </div>

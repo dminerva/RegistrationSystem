@@ -34,6 +34,7 @@ if($pw1 == $pw2) {
 <?php
 if($error == 0) {
     echo "<p>password changed</p>";
+    echo "<a href='adminChangePW.php'>Back</a>";
 } else {
     echo "<p>".$msg."</p>";
 }

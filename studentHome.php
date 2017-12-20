@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,6 +69,11 @@
 		<div class="col-sm-4">
 			<button type="button" class="btn btn-default btn-block">				
 				<a href="stuAddSection.php">Add Course</a>
+			</button>
+		</div>
+                <div class="col-sm-4">
+			<button type="button" class="btn btn-default btn-block">				
+				<a href="changePassword.php">Change password</a>
 			</button>
 		</div>
 	</div>	

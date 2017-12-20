@@ -1,9 +1,6 @@
 <?php 
+ob_start();
 
-$email = $_POST["users"];
-
-$CrnNumber = $_POST["crnNumber"];
-echo $CrnNumber;
 ?>
 <?php
 include 'connectDB.php';

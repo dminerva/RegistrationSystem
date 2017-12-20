@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,18 +20,7 @@
   </thead> 
    <tbody>
     <?php
-    $DBservername = "localhost";
-    $DBusername = "root";
-    $DBpassword = "";
-    $DBname = "registrationsystem";
-
-
-    // Create connection
-    $conn = new mysqli($DBservername, $DBusername, $DBpassword, $DBname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    include 'connectDB.php';
      
     $user = $_SESSION["username"];
 
@@ -36,8 +28,8 @@
     $sql = "SELECT * FROM section as sec 
     LEFT JOIN course as c ON sec.CourseID = c.CourseID 
     LEFT JOIN building as b ON sec.BuildingID = b.BuildingID
-    LEFT JOIN timeSlot as t ON sec.TimeSlot = t.TimeSlotID
-    LEFT JOIN semesterYear as sy ON sec.semesterYear = sy.semesterYearID
+    LEFT JOIN timeslot as t ON sec.TimeSlot = t.TimeSlotID
+    LEFT JOIN semesteryear as sy ON sec.semesteryear = sy.semesterYearID
     WHERE sy.semesterYearID = '".$_POST["sy"]."'AND sec.prof_email = '" . $user . "'";
 
     $result = $conn->query($sql);
@@ -47,7 +39,8 @@
         // output data of each row
         while($row = $result->fetch_assoc()) 
         {
-            echo "<tr><td>".$row['CRN']."</td><td>".$row['CourseName']."</td><td>".$row['build_name']."</td><td>".$row['CRN']."</td><td>".$row['Start']."</td><td>".$row['End']."</td></tr>";
+            echo "<tr><td>".$row['CRN']."</td><td>".$row['CourseName']."</td><td>".$row['build_name']."</td><td>".$row['CRN']."</td><td>".$row['Start']."</td><td>"
+            .$row['End']."</td></tr>";
         } 
 
     }

@@ -1,6 +1,7 @@
+<?php ob_start(); ?>
 <html>
 <head>
-	<title>Assign Grades</title>
+	<title>Take Attendance</title>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -23,7 +24,7 @@
 			$user = $_SESSION["username"];
 
 			$sql = " SELECT * FROM section AS sec 
-			LEFT JOIN Course AS c ON sec.CourseID = c.CourseID
+			LEFT JOIN course AS c ON sec.CourseID = c.CourseID
 			LEFT JOIN semesteryear AS sy ON sy.SemesterYearID = sec.SemesterYear 
 			WHERE sy.current = 1 AND sec.prof_Email = '".$user."'";
 			
@@ -50,7 +51,7 @@
 			</select>
 		</div>
 		<div class="form-group">
-			<button type="submit" class="btn btn-default">Search</button>
+			<button type="submit" class="btn btn-default">Submit</button>
 			<button type="reset" class="btn btn-default" onclick="return confirm('Are you sure you want to reset?');">Reset</button>
 		</div>
 	</form>

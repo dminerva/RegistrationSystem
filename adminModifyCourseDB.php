@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'connectDB.php';
 
 $count = 0;
@@ -118,6 +119,7 @@ if($count == 0 && $count2 == 0) {
     //echo $count;
 } elseif ($count > 0 || $count2 > 0) {
     echo "<h2>Course modified</h2>";
+    echo "<a href='adminModifyCourse.php'>Back</a>";
     //echo $count;
 }
 

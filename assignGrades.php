@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <html>
 <head>
 	<title>Assign Grades</title>
@@ -23,7 +26,7 @@
 			$user = $_SESSION["username"];
 
 			$sql = " SELECT * FROM section AS sec 
-			LEFT JOIN Course AS c ON sec.CourseID = c.CourseID
+			LEFT JOIN course AS c ON sec.CourseID = c.CourseID
 			LEFT JOIN semesteryear AS sy ON sy.SemesterYearID = sec.SemesterYear 
 			WHERE sy.current = 1 AND sec.prof_Email = '".$user."'";
 			

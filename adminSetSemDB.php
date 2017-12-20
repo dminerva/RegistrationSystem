@@ -43,6 +43,7 @@ if($error == 0) {
 <?php
 if($error == 0) {
     echo "<p>new semester set</p>";
+    echo "<a href='adminSetSem.php'>Back</a>";
 } else {
     echo "<p>".$msg."</p>";
 }

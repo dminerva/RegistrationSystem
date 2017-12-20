@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'connectDB.php';
 
 $error = 0;
@@ -53,6 +54,7 @@ if($error == 1) {
     echo "<h2>Time slot added</h2>";
 }
 ?>
+<a href="adminCreateTimeSlot.php">Back</a>
 </div>
 </body>
 </html>

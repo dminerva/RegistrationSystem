@@ -1,15 +1,11 @@
 <?php
+ob_start();
 session_start();
 include 'connectDB.php';
-
 $email = $_POST["email"];
-$password = $_POST["password"];
-$password = md5($password);
-
+$password = md5($_POST["password"]);
 $email = filter_var($email, FILTER_SANITIZE_STRING);
 $password = filter_var($password, FILTER_SANITIZE_STRING);
-
-
 
 $sql = "SELECT * FROM user WHERE UserEmail = '$email' AND Password = '$password'";
 $result = $conn->query($sql);
@@ -40,13 +36,14 @@ if ($result->num_rows > 0) {
 			header("Location: researchHome.php");
 		}
 		if ($type == "admin") {
+                        echo $type;
 			header("Location: adminHome.php");
 		}
 	}
 	
-} else {
-	echo "please enter a valid email and password";
 }
+	echo "ERROR: No account found."; 
+        echo "<a href='login.php'>Back</a>";
 
 $conn->close();
 ?>
